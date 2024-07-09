@@ -5,9 +5,6 @@ public class numberMania {
 
         int userGuess, balanceInput;
         Logic myLogic = new Logic();
-
-        /* int test = 5 * 5 * 5 * 5;
-        System.out.print(test); */
        
         // make so user cant bet higher then random number 
         balanceInput = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter your starting balance:"));

@@ -30,23 +30,30 @@ public class Logic {
 
     // Generates three random numbers
     public void numbersGenerator() {
-        ranNum1 = random.nextInt(5) + 1;
-        ranNum2 = random.nextInt(5) + 1;
-        ranNum3 = random.nextInt(5) + 1;
+        ranNum1 = random.nextInt(3) + 1;
+        ranNum2 = random.nextInt(3) + 1;
+        ranNum3 = random.nextInt(3) + 1;
     }
 
     // Earnings multipler 
-    public void numberMultiplier() { //TODO, IF HITS MORE THAN ONCE WILL ONLY GIVE AMOUNT FOR ONE (DOESNT ACCUMLATE 2/3)
+    public void numberMultiplier() {
         balance -= guess;
         roundWinnings = 0;
-        if (guess == ranNum1) {
+        if (guess == ranNum1 && guess == ranNum2 && guess == ranNum3) {  //all hit :0
+            roundWinnings = guess * ranNum1 * ranNum2 * ranNum3;
+        } else if (guess == ranNum1 && guess == ranNum2) {   //2 hits :)
+            roundWinnings = guess * ranNum1 * ranNum2;
+        } else if (guess == ranNum1 && guess == ranNum3) {
+            roundWinnings = guess * ranNum1 * ranNum3;
+        } else if (guess == ranNum2 && guess == ranNum3) {
+            roundWinnings = guess * ranNum2 * ranNum3;
+        } else if (guess == ranNum1) {  //only 1 hits 
             roundWinnings = guess * ranNum1;
         } else if (guess == ranNum2) {
             roundWinnings = guess * ranNum2;
         } else if (guess == ranNum3) {
             roundWinnings = guess * ranNum3;
         }
-        //if()
         totalWon += roundWinnings;
         balance += roundWinnings;
     }
