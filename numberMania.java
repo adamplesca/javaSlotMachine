@@ -28,7 +28,7 @@ public class numberMania {
             myLogic.numbersGenerator();
             myLogic.numberMultiplier();
 
-            JOptionPane.showMessageDialog(null, "Your bet was : €"
+            JOptionPane.showMessageDialog(null, "Your bet was:  €"
                     + userGuess
                     + "\n "
                     + "------------- |"
@@ -39,11 +39,11 @@ public class numberMania {
                     + myLogic.getRanNum3()
                     + "|------------- "
                     + "\n "
-                    + "You won : €" + myLogic.getRoundWinnings()
+                    + "You won:  €" + myLogic.getRoundWinnings()
                     + "\n "
-                    + "Your total winnings so far : €" + myLogic.getTotalWinnings()
+                    + "Your total winnings so far:  €" + myLogic.getTotalWinnings()
                     + "\n "
-                    + "Your balance remaining : €" + myLogic.getBalance());
+                    + "Your balance remaining:  €" + myLogic.getBalance());
 
             int continueGame = JOptionPane.showConfirmDialog(null, "Do you want to play again?", "Continue?", JOptionPane.YES_NO_OPTION);
             if (continueGame == JOptionPane.NO_OPTION) {
