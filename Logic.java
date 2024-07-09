@@ -1,70 +1,79 @@
 import java.util.Random;
 
 public class Logic {
-    
-    private int guess, userInput,  balance,  totalWinnings;
+
+    private int guess, balance, totalWon;
     private int ranNum1, ranNum2, ranNum3;
+    private int roundWinnings;
 
     Random random = new Random();
 
-    public Logic(){
+    public Logic() {
         guess = 0;
         balance = 0;
-        totalWinnings = 0;
+        totalWon = 0;
 
         ranNum1 = 0;
         ranNum2 = 0;
         ranNum3 = 0;
     }
 
-    //setter for user guess
-    public void setGuess(int guess){
+    // Setter for user bet
+    public void setGuess(int guess) {
         this.guess = guess;
     }
 
-    //setting and adding balance to user app
-    public void setBalance(int balance){
-        this.balance = balance;
-    }
-    public int addBalance(){
-        balance = balance + userInput;
-        return balance;
+    // Setting and adding balance to user account
+    public void setBalance(int balanceInput) {
+        this.balance += balanceInput;
     }
 
     // Generates three random numbers
-    public void numbersGenerator(){
-        ranNum1 = random.nextInt(10) + 1;
-        ranNum2 = random.nextInt(10) + 1;
-        ranNum3 = random.nextInt(10) + 1;
+    public void numbersGenerator() {
+        ranNum1 = random.nextInt(5) + 1;
+        ranNum2 = random.nextInt(5) + 1;
+        ranNum3 = random.nextInt(5) + 1;
     }
 
-    //number multiplyer
-    public void numberMultiplier(){
-            if(guess == ranNum1){
-                guess *= ranNum1;
-            }else if(guess == ranNum2){
-                guess *= ranNum2;
-            }else if(guess == ranNum3){
-                guess *= ranNum3;
-            }
+    // Earnings multipler 
+    public void numberMultiplier() { //TODO, IF HITS MORE THAN ONCE WILL ONLY GIVE AMOUNT FOR ONE (DOESNT ACCUMLATE 2/3)
+        balance -= guess;
+        roundWinnings = 0;
+        if (guess == ranNum1) {
+            roundWinnings = guess * ranNum1;
+        } else if (guess == ranNum2) {
+            roundWinnings = guess * ranNum2;
+        } else if (guess == ranNum3) {
+            roundWinnings = guess * ranNum3;
+        }
+        //if()
+        totalWon += roundWinnings;
+        balance += roundWinnings;
     }
 
-    //returning random generated numbers
-    public int getRanNum1(){
+    // Returning random generated slot numbers
+    public int getRanNum1() {
         return ranNum1;
     }
-    public int getRanNum2(){
+    public int getRanNum2() {
         return ranNum2;
     }
-    public int getRanNum3(){
+    public int getRanNum3() {
         return ranNum3;
     }
 
-
-    public int getWinnings(){
-        return totalWinnings;
+    // Gets winnings for that round
+    public int getRoundWinnings() {
+        return roundWinnings;
     }
-    public int getBalance(){
+
+    // Gets total winnings so far
+    public int getTotalWinnings() {
+        return totalWon;
+    }
+
+    // Total balance of player
+    public int getBalance() {
         return balance;
     }
 }
