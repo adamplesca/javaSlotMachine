@@ -30,9 +30,9 @@ public class Logic {
 
     // Generates three random numbers
     public void numbersGenerator() {
-        ranNum1 = random.nextInt(3) + 1;
-        ranNum2 = random.nextInt(3) + 1;
-        ranNum3 = random.nextInt(3) + 1;
+        ranNum1 = random.nextInt(10) + 1;
+        ranNum2 = random.nextInt(10) + 1;
+        ranNum3 = random.nextInt(10) + 1;
     }
 
     // Earnings multipler 
