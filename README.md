@@ -27,4 +27,5 @@ Fixed minor and major bugs to the game. I could leave this project as is since i
 - Fixed betting glitch: player can no longer bet more than the slot machine number rolls since this is how the player can win the bets.
 
 ### Version 4
+**Date** work in progress
 
