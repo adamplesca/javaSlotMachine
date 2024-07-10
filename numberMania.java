@@ -6,7 +6,6 @@ public class numberMania {
         int userGuess, balanceInput;
         Logic myLogic = new Logic();
        
-        // make so user cant bet higher then random number 
         balanceInput = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter your starting balance:"));
         myLogic.setBalance(balanceInput);
 
@@ -17,13 +16,19 @@ public class numberMania {
                     balanceInput = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter the amount to add to your balance:"));
                     myLogic.setBalance(balanceInput);
                 } else {
-                    JOptionPane.showMessageDialog(null, "You ran out of money, brokie ");
+                    JOptionPane.showMessageDialog(null, "You ran out of money");
                     break;
                 }
             }
 
-            userGuess = Integer.parseInt(JOptionPane.showInputDialog(null, "Pick a number between 1-10"));
-            myLogic.setGuess(userGuess);
+            do {
+                userGuess = Integer.parseInt(JOptionPane.showInputDialog(null, "Pick a number between 1-10"));
+                if (userGuess < 1 || userGuess > 10) {
+                    JOptionPane.showMessageDialog(null, "Invalid bet. Enter only a number between 1 and 10");
+                }
+            } while (userGuess < 1 || userGuess > 10);
+            
+            myLogic.setGuess(userGuess); 
 
             myLogic.numbersGenerator();
             myLogic.numberMultiplier();
