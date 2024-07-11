@@ -35,7 +35,7 @@ public class Logic {
         ranNum3 = random.nextInt(10) + 1;
     }
 
-    // Earnings multipler 
+    // Earnings multipler/calculator
     public void numberMultiplier() {
         balance -= guess;
         roundWinnings = 0;
@@ -54,8 +54,14 @@ public class Logic {
         } else if (guess == ranNum3) {
             roundWinnings = guess * ranNum3;
         }
-        totalWon += roundWinnings;
-        balance += roundWinnings;
+        //So the house wins in the end >:) 
+        if(roundWinnings <= 10){
+            totalWon += roundWinnings;
+            balance += roundWinnings;
+        }else{
+            totalWon += roundWinnings / 2.5; 
+            balance += roundWinnings / 2.5;
+        }
     }
 
     // Returning random generated slot numbers
@@ -71,7 +77,7 @@ public class Logic {
 
     // Gets winnings for that round
     public int getRoundWinnings() {
-        return roundWinnings;
+        return (int)(roundWinnings / 2.5);
     }
 
     // Gets total winnings so far
