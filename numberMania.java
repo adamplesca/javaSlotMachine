@@ -6,7 +6,7 @@ public class numberMania {
         int userGuess, balanceInput;
         Logic myLogic = new Logic();
        
-        balanceInput = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter your starting balance:"));
+        balanceInput = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter your starting balance: "));
         myLogic.setBalance(balanceInput);
 
         while (true) {
@@ -22,11 +22,11 @@ public class numberMania {
             }
 
             do {
-                userGuess = Integer.parseInt(JOptionPane.showInputDialog(null, "Pick a number between 1-10"));
-                if (userGuess < 1 || userGuess > 10) {
-                    JOptionPane.showMessageDialog(null, "Invalid bet. Enter only a number between 1 and 10");
+                userGuess = Integer.parseInt(JOptionPane.showInputDialog(null, "Pick a bet between 2-10"));
+                if (userGuess < 2 || userGuess > 10) {
+                    JOptionPane.showMessageDialog(null, "Invalid bet. Enter only a number between 2 and 10");
                 }
-            } while (userGuess < 1 || userGuess > 10);
+            } while (userGuess < 2 || userGuess > 10);
             
             myLogic.setGuess(userGuess); 
 
