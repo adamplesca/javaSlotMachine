@@ -25,7 +25,7 @@ I realized I was getting rusty with Java and wanted to make a project to remove 
 4. **1 Hit**  
 
    ![1 Hit](https://github.com/adamplesca/javaSlotMachine/assets/116078864/eabd5500-e39a-4e63-b3a6-0a9f449072be)  
-   If your bet matches one of the three randomly generated numbers, you win an amount equal to your bet multiplied by that number.
+   If your bet matches one of the three randomly generated numbers, you win an amount equal to the bet divided by 2.5, so you don't get completely crazy payouts 
 
 5. **2 Hits**  
 
